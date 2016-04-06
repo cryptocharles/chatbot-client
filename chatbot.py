@@ -14,5 +14,6 @@ server_url = 'http://10.244.195.170:7766/'
 @click.argument('username')
 @click.argument('message')
 def cli(username, message):
-    json_logs = json.loads(json.dumps(dict(username=username, message=message)))
-    click.echo(json.loads(requests.post(url=server_url, json=json).text))
+    json_message = json.loads(json.dumps(dict(username=username, message=message)))
+    response = requests.post(url=server_url, json=json_message).text
+    click.echo(json.loads(response))
