@@ -8,7 +8,7 @@ from two1.bitrequests import BitTransferRequests
 wallet = Wallet()
 username = Config().username
 requests = BitTransferRequests(wallet, username)
-server_url = 'http://10.244.30.174:7766/'
+server_url = 'http://10.244.220.64:7766/'
 
 @click.command()
 @click.argument('username')
